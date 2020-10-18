@@ -20,7 +20,7 @@
             @Html.TextBoxFor(model => model.FirstName)
         </td>
     </tr>
-    
+
     <tr>
         <td> </td>
         <td>
@@ -90,7 +90,6 @@
     </tr>
     <tr>
         <td>
-            
         </td>
         <td>
             <table>
@@ -103,6 +102,13 @@
                     </td>
                 </tr>
             </table>
+        </td>
+
+    </tr>
+    <tr>
+        <td> </td>
+        <td>
+            @Html.ValidationMessage("Error", null, new { @class = "text text.danger" })
         </td>
 
     </tr>

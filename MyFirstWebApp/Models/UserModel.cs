@@ -29,6 +29,7 @@ namespace MyFirstWebApp.Models
         [Display(Name = "Confirm Password:")]
         public string ConfirmPassword { get; set; }
         public System.DateTime CreatedOn { get; set; }
+        public string successmessage { get; set; }
 
     }
 }

@@ -1,5 +1,25 @@
-﻿<ul class="nav navbar-nav navbar-right">
-    <li>@Html.ActionLink("Register", "Register", "Account",null,null)</li>
-    <li>@Html.ActionLink("Login", "Login", "Account", null, null)</li>
+﻿@if (Session["Email"] == null)
+{
+<ul class="nav navbar-nav navbar-right">
+    <li>
+    @Html.ActionLink("Register", "Register", "Account", null, null)
+    </li>
+    <li>
+    @Html.ActionLink("Login", "Login", "Account", null, null)
+    </li>
     
 </ul>
+}
+
+else
+{
+<ul class="nav navbar-nav navbar-right">
+    <li>
+    @Html.ActionLink("HI"+ Session["Email"], "Index", "Home", null, null)
+    </li>
+    <li>
+    @Html.ActionLink("LogOut", "LogOut", "Account", null, null)
+    </li>
+
+</ul>
+}
