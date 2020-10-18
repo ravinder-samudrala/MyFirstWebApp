@@ -5,48 +5,48 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="UserDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Users">
+        <EntityType Name="UsersTable">
           <Key>
             <PropertyRef Name="UserID" />
           </Key>
           <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FirstName" Type="varbinary" MaxLength="50" Nullable="false" />
-          <Property Name="LastName" Type="varbinary" MaxLength="50" Nullable="false" />
-          <Property Name="Email" Type="varbinary" MaxLength="150" Nullable="false" />
-          <Property Name="PassWord" Type="varbinary" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PassWord" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CreatedOn" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityContainer Name="UserDBModelStoreContainer">
-          <EntitySet Name="Users" EntityType="Self.Users" Schema="user" store:Type="Tables" />
+          <EntitySet Name="UsersTable" EntityType="Self.UsersTable" Schema="user" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="UserDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="User">
+        <EntityType Name="UsersTable">
           <Key>
             <PropertyRef Name="UserID" />
           </Key>
           <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
-          <Property Name="LastName" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
-          <Property Name="Email" Type="Binary" MaxLength="150" FixedLength="false" Nullable="false" />
-          <Property Name="PassWord" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PassWord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
-        <EntityContainer Name="UserDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Users" EntityType="Self.User" />
+        <EntityContainer Name="UserDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="UsersTables" EntityType="Self.UsersTable" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="UserDBModelStoreContainer" CdmEntityContainer="UserDBEntities">
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="UserDBModel.User">
-              <MappingFragment StoreEntitySet="Users">
+        <EntityContainerMapping StorageEntityContainer="UserDBModelStoreContainer" CdmEntityContainer="UserDBEntities1">
+          <EntitySetMapping Name="UsersTables">
+            <EntityTypeMapping TypeName="UserDBModel.UsersTable">
+              <MappingFragment StoreEntitySet="UsersTable">
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />

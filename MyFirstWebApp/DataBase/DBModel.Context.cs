@@ -13,10 +13,10 @@ namespace MyFirstWebApp.DataBase
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UserDBEntities : DbContext
+    public partial class UserDBEntities1 : DbContext
     {
-        public UserDBEntities()
-            : base("name=UserDBEntities")
+        public UserDBEntities1()
+            : base("name=UserDBEntities1")
         {
         }
     
@@ -25,6 +25,6 @@ namespace MyFirstWebApp.DataBase
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UsersTable> UsersTables { get; set; }
     }
 }

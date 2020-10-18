@@ -12,13 +12,13 @@ namespace MyFirstWebApp.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class UsersTable
     {
         public int UserID { get; set; }
-        public byte[] FirstName { get; set; }
-        public byte[] LastName { get; set; }
-        public byte[] Email { get; set; }
-        public byte[] PassWord { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string PassWord { get; set; }
         public System.DateTime CreatedOn { get; set; }
     }
 }
